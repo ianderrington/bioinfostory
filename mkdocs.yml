@@ -3,7 +3,7 @@ site_url: https://ianderrington.github.io/ianderrington/
 site_author: Ian Derrington
 site_description: >-
   Where does it go?
-  
+
   What can we do with it?
 # Repository
 repo_name: ianderrington/ianderrington
@@ -11,12 +11,13 @@ repo_url: https://github.com/ianderrington/bioinfostory
 edit_uri: ""
 
 # Copyright
-copyright: Copyright &copy; 2021 - 2021 Ian Derrington
+copyright: Copyright &copy; 2021 Ian Derrington
 
 # Configuration
 theme:
   name: null
   custom_dir: themes/mkdocs-material/material
+
   # custom_dir: !ENV [THEME_DIR, "material"]
   # name: material
 
@@ -37,7 +38,7 @@ theme:
     # - navigation.expand
     - navigation.indexes
     # - navigation.instant
-    - navigation.sections
+    # - navigation.sections
     - navigation.tabs
     # - navigation.tabs.sticky
     - navigation.top
@@ -45,15 +46,17 @@ theme:
     - search.highlight
     - search.share
     - search.suggest
+    # - tabs: true
+    # - include_sidebar: yes
     # - toc.integrate
   palette:
-    - scheme: default
-      primary: indigo
-      accent: indigo
+    - scheme: slate
+      primary: cyan
+      accent: cyan
       toggle:
         icon: material/toggle-switch
         name: Switch to dark mode
-    - scheme: slate
+    - scheme: default
       primary: red
       accent: red
       toggle:
@@ -74,6 +77,13 @@ plugins:
 #        changelog/insiders.md: insiders/changelog.md
   - minify:
       minify_html: true
+  - awesome-pages
+  - include_dir_to_nav
+  ## https://squidfunk.github.io/mkdocs-material/setup/setting-up-social-cards/#meta-tags
+  # - social:
+  #     cards_color:
+  #       fill: "#0FF1CE" #
+  #       text: "#FFFFFF"
 
 # Customization
 extra:
@@ -94,6 +104,11 @@ extra:
     - icon: fontawesome/brands/instagram
       link: https://instagram.com/ianderrington
 
+extra_javascript:
+  - javascripts/shortcuts.js
+  - javascripts/consent.js
+  - javascripts/feedback.js
+
 # Extensions
 markdown_extensions:
   - admonition
@@ -104,7 +119,9 @@ markdown_extensions:
   - meta
   - md_in_html
   - toc:
-      permalink: true
+      permalink: false
+      toc_depth: 2
+
   - pymdownx.arithmatex:
       generic: true
   - pymdownx.betterem:
@@ -117,10 +134,10 @@ markdown_extensions:
   - pymdownx.highlight
   - pymdownx.inlinehilite
   - pymdownx.keys
-  - pymdownx.magiclink:
-      repo_url_shorthand: true
-      user: squidfunk
-      repo: mkdocs-material
+  #- pymdownx.magiclink:
+  #    repo_url_shorthand: true
+  #    user: derringi
+  #    repo: bioinfostory
   - pymdownx.mark
   - pymdownx.smartsymbols
   - pymdownx.superfences:
@@ -134,18 +151,66 @@ markdown_extensions:
       custom_checkbox: true
   - pymdownx.tilde
 
+
+extra:
+  consent:
+    title: Cookie consent
+    description: >- #
+      We use cookies to recognize your repeated visits and preferences, as well
+      as to measure the effectiveness of our documentation and whether users
+      find what they're searching for. With your consent, you're helping us to
+      make our documentation better.
+  analytics:
+    provider: custom
+    # property: foobar #
+
+  analytics: #
+    feedback:
+      title: Was this page helpful?
+      ratings:
+        - icon: material/emoticon-happy-outline
+          name: This page was helpful
+          data: 1
+          note: >-
+            Thanks for your feedback!
+        - icon: material/emoticon-sad-outline
+          name: This page could be improved
+          data: 0
+          note: >- #
+            Thanks for your feedback! Help us improve this page by
+            using our <a href="..." target=_blank>feedback form</a>.
+
+
+
 # Page tree
 nav:
   - index.md
   - Why am I here?: start.md
   - Story:
+    - story/index.md
     - DNA: story/patient.md
-    - Sample extraction: story/extraction.md
+    - Collection: story/collection.md
     - Preparation: story/preparation.md
     - Digitization: story/digitization.md
     - Storage: story/storage.md
-    - Analysis: story/analysis.md
+    - Analysis:
+      - story/analysis/index.md
+      - Primary: story/analysis/primary.md
+      - Secondary: story/analysis/secondary.md
+      - Tertiary: story/analysis/tertiary.md
+      - Enabling: story/analysis/enabling.md
+      - 'ML Methods':
+        - story/analysis/ML/index.md
+        - 'Stages': story/analysis/ML/stages.md
+        - 'Components':
+          - story/analysis/ML/components/index.md
+          - Architecture: story/analysis/ML/components/architecture.md
+        - Strategies: story/analysis/ML/strategies.md
     - Reporting: story/reporting.md
     - Communication: story/communication.md
-  - What's next?:
-    - Prognosis: whats_next.md
+  - Accelerate!: story/accelerate.md
+  - Examples:
+    - Example 1: examples/few_pores.md
+    - Example 2: examples/poor_accuracy.md
+  - Summary: summary.md
+  - About: about_ian.md
