@@ -208,9 +208,9 @@ nav:
         - Strategies: story/analysis/ML/strategies.md
     - Reporting: story/reporting.md
     - Communication: story/communication.md
-  - Accelerate!: story/accelerate.md
+    - Summary: summary.md
+  - Accelerate: story/accelerate.md
   - Examples:
     - Example 1: examples/few_pores.md
     - Example 2: examples/poor_accuracy.md
-  - Summary: summary.md
   - About: about_ian.md

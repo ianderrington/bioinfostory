@@ -11,8 +11,8 @@ hide:
  -->
   ![patient](patient.jpg){: style="height:250px;align=center"}
   <!-- <figcaption> -->
-  <a href="../accelerate" title="storage" class="md-button">
-    Go faster
+  <a href="../summary" title="storage" class="md-button">
+    Summary
   </a>
   <!-- </figcaption> -->
 </figure>

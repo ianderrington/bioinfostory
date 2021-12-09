@@ -1,16 +1,12 @@
-- 'Step 1: Get Data': accelerate/get_data.md
-- 'Step 2: Find the weakest links': accelerate/find_weakest_links.md
-- 'Step 3: Form and Test Hypotheses': accelerate/form_and_test_hypotheses.md
+
+# Five tips to accelerate flow of DNA information
 
 
-# Get data about info movement
-
-# Identify the present weakest links
-
-# Create and test hypothesis about origin of slowness
-
-# Anticipate the future weakest links
+!!! tip "Identify and solve present bottle necks"
 
 
+!!! tip "Anticipate and prevent likely bottle necks"
 
-    7. Once you have everything analyzed, now you have to make it fast. Pipelining. In the deployement code, in your studies. Automate what you need to automate as soon as you actually need to automated, or somewhat slightly before.
+!!! tip "Build _something_ and quickly iterate its improvement.,...."
+
+!!! tip "Communicate directly and effectively"
